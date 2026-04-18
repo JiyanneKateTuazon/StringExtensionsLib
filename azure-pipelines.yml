@@ -27,5 +27,5 @@ steps:
 - task: NuGetAuthenticate@1
   displayName: 'Authenticate NuGet'
 
-- script: dotnet nuget push "$(Build.ArtifactStagingDirectory)\*.nupkg" --source "lab4feed" --skip-duplicate
+- script: dotnet nuget push "$(Build.ArtifactStagingDirectory)\*.nupkg" --source "https://pkgs.dev.azure.com/jtuazon8/Lab4-StringExtensions/_packaging/lab4feed/nuget/v3/index.json" --skip-duplicate
   displayName: 'Push package'
