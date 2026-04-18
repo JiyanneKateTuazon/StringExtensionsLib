@@ -1,8 +1,3 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
 - main
 
@@ -27,5 +22,5 @@ steps:
 - task: NuGetAuthenticate@1
   displayName: 'Authenticate NuGet'
 
-- script: dotnet nuget push "$(Build.ArtifactStagingDirectory)\*.nupkg" --source "https://pkgs.dev.azure.com/jtuazon8/Lab4-StringExtensions/_packaging/lab4feed/nuget/v3/index.json" --skip-duplicate
+- script: dotnet nuget push "$(Build.ArtifactStagingDirectory)\*.nupkg" --source "https://pkgs.dev.azure.com/jtuazon8/Lab4-StringExtensions/_packaging/lab4feed/nuget/v3/index.json" --api-key AzureDevOps --skip-duplicate
   displayName: 'Push package'
